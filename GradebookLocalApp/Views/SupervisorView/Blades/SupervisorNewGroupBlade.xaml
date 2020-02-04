@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="GradebookLocalApp.Views.SupervisorView.Blades.SupervisorNewGroupBlade"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GradebookLocalApp.Views.SupervisorView.Blades"
+             mc:Ignorable="d" 
+             d:DesignWidth="378" Background="#f1f2f6" Height="594">
+    <Grid>
+        <Label x:Name="NameGroupLbl" Content="Nazwa grupy" FontSize="16" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="142"/>
+        <TextBox x:Name="Group" HorizontalAlignment="Left" Margin="208,70,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Background="White" BorderBrush="#FF3742FA"/>
+        <Label Content="Nowa grupa" Foreground="#3742fa" FontSize="24" HorizontalAlignment="Left" Margin="2,10,0,0" VerticalAlignment="Top"/>
+        <Button Content="Dodaj" Background="#3742fa" Foreground="White" BorderBrush="{x:Null}" x:Name="AddBut" FontSize="18" HorizontalAlignment="Center" Margin="0,545,0,0" VerticalAlignment="Top" Height="34" Width="102" Click="AddBut_Click"/>
+
+    </Grid>
+</UserControl>

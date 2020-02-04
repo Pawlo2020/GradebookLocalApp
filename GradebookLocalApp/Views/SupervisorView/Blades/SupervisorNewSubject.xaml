@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="GradebookLocalApp.Views.SupervisorView.Blades.SupervisorNewSubject"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GradebookLocalApp.Views.SupervisorView.Blades"
+             mc:Ignorable="d" 
+             d:DesignWidth="378" Background="#f1f2f6" Height="594">
+    <Grid>
+        <Label x:Name="SubjectLbl" Content="Nazwa przedmiotu" FontSize="16" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="142"/>
+        <TextBox x:Name="Subject" HorizontalAlignment="Left" Margin="208,70,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Background="White" BorderBrush="#FF3742FA"/>
+        <Label Content="Nowy przedmiot" Foreground="#3742fa" FontSize="24" HorizontalAlignment="Left" Margin="2,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="TeacherLbl" Content="Prowadzący" FontSize="16" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top" Height="38" Width="143"/>
+        <ComboBox x:Name="SubjectCombo" ItemsSource="{Binding Teacher}" HorizontalAlignment="Left" Margin="208,112,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FF3742FA">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0} {1}">
+                                <Binding Path="imie_prowadzacy"/>
+                                <Binding Path="nazwisko_prowadzacy"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Button Content="Dodaj" Background="#3742fa" Foreground="White" BorderBrush="{x:Null}" x:Name="UpdateBut" FontSize="18" HorizontalAlignment="Center" Margin="0,545,0,0" VerticalAlignment="Top" Height="34" Width="102" Click="UpdateBut_Click"/>
+
+    </Grid>
+</UserControl>

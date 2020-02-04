@@ -1,0 +1,35 @@
+﻿<Page x:Class="GradebookLocalApp.Views.StudentView.StudentClassProjectsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GradebookLocalApp.Views.StudentView"
+      mc:Ignorable="d" 
+      d:DesignHeight="626" d:DesignWidth="966" Background="#ffffff"
+      Title="StudentClassProjectsPage">
+
+    <Grid>
+        <Rectangle Fill="#30336b" HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="966"/>
+        <Label x:Name="ClassNameLbl" Content="Project Name" FontSize="24" Foreground="#f1f2f6" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Width="180"/>
+        <ListView x:Name="ProjectsView" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="50,106,437,50" BorderBrush="{x:Null}" Background="#FFF5F6FA" SelectionChanged="TaskView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+
+                        <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                            <Setter Property="Background" Value="#FF786FA6"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Width="477" Header="Nazwa projektu" DisplayMemberBinding="{Binding nazwa_proj, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="Apply" Content="Aplikuj" Background="#3742fa" Foreground="White" BorderBrush="{x:Null}" FontSize="18" HorizontalAlignment="Left" Margin="561,117,0,0" VerticalAlignment="Top" Height="34" Width="135" Click="ApplyBut" />
+
+    </Grid>
+</Page>

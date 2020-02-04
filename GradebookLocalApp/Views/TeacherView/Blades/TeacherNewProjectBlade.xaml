@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="GradebookLocalApp.Views.TeacherView.Blades.TeacherNewProjectBlade"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GradebookLocalApp.Views.TeacherView.Blades"
+             mc:Ignorable="d" 
+             d:DesignWidth="378" Background="#f1f2f6" Height="594">
+    <Grid>
+        <Label Content="Nowy projekt" Foreground="#3742fa" FontSize="24" HorizontalAlignment="Left" Margin="2,10,0,0" VerticalAlignment="Top" Width="159"/>
+        <Button Content="Dodaj" Background="#3742fa" Foreground="White" BorderBrush="{x:Null}" x:Name="UpdateBut" FontSize="18" HorizontalAlignment="Left" Margin="134,528,0,0" VerticalAlignment="Top" Height="32" Width="101" Click="AddBut_Click"/>
+        <Label x:Name="ProjectDateLbl" Content="Termin wykonania" FontSize="16" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="142"/>
+        <!--<TextBox x:Name="ProjectDate" HorizontalAlignment="Left" Margin="208,70,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Background="White" BorderBrush="#FF3742FA"/>-->
+        <Label x:Name="ClassNameLbl" Content="Zajęcia" FontSize="16" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top" Width="142"/>
+        <ComboBox x:Name="ClassCombo"  ItemsSource="{Binding Class}" HorizontalAlignment="Left" Margin="208,176,0,0" VerticalAlignment="Top" Width="154" BorderBrush="#FF3742FA">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock.Text>
+                            <MultiBinding StringFormat="{}{0}-{1}">
+                                <Binding Path="Subject"/>
+                                <Binding Path="TypeClass"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFF0F0F0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <TextBox x:Name="Project" HorizontalAlignment="Left" Margin="208,106,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="154" Background="White" BorderBrush="#FF3742FA"/>
+        <Label x:Name="ProjectNameLbl" Content="Nazwa projektu" FontSize="16" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top" Width="142"/>
+        <DatePicker x:Name="ProjectDate" HorizontalAlignment="Left" Margin="208,67,0,0" VerticalAlignment="Top" Width="154"/>
+    </Grid>
+</UserControl>
