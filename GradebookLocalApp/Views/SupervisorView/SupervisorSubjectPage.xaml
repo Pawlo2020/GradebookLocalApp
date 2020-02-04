@@ -1,0 +1,36 @@
+﻿<Page x:Class="GradebookLocalApp.Views.SupervisorView.SupervisorSubjectPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GradebookLocalApp.Views.SupervisorView"
+      mc:Ignorable="d" 
+      d:DesignHeight="626" d:DesignWidth="966" Background="#ffffff"
+      Title="SupervisorSubjectPage">
+
+    <Grid>
+        <Rectangle HorizontalAlignment="Left" RadiusX="5" RadiusY="5" Height="44" Margin="50,21,0,0" Stroke="#3742fa" VerticalAlignment="Top" Width="192"/>
+        <Label x:Name="SubjectsLbl" Content="Przedmioty" Margin="68,21,0,561" HorizontalAlignment="Left" FontSize="32" Width="156" FontFamily="Tw Cen MT" Foreground="#3742fa"/>
+        <ListView x:Name="SubjectView" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="50,84,423,50" BorderBrush="{x:Null}" Background="#FFF5F6FA" SelectionChanged="SubjectView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+
+                        <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="IsHitTestVisible" Value="False"/>
+                            <Setter Property="Background" Value="#FF786FA6"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Width="214" Header="Nazwa przedmiotu" DisplayMemberBinding="{Binding SubjectName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Width="130" Header="Imię prowadzącego" DisplayMemberBinding="{Binding TeacherName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <GridViewColumn Width="145" Header="Nazwisko prowadzącego" DisplayMemberBinding="{Binding TeacherLastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="NewSubject" Content="Nowy przedmiot" Background="#3742fa" Foreground="White" BorderBrush="{x:Null}" FontSize="18" HorizontalAlignment="Left" Margin="260,29,0,0" VerticalAlignment="Top" Height="33" Width="160" Click="NewSubject_Click"/>
+        <StackPanel x:Name="SupSubjectBlade" Margin="561,0,0,0" Height="626" VerticalAlignment="Center" HorizontalAlignment="Left" Width="405"/>
+
+    </Grid>
+</Page>
